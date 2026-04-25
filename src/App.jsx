@@ -1,18 +1,24 @@
-import HelloWorld from "./components/HelloWorld";
-import DataBinding from "./components/DataBinding";
-import ComponentsDemo from "./components/ComponentsDemo";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout";
+import ComponentsPage from "./pages/ComponentsPage";
+import DataBindingPage from "./pages/DataBindingPage";
+import HelloWorldPage from "./pages/HelloWorldPage";
+import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFoundPage";
 import "./styles/global.css";
 
 function App() {
   return (
-    <main className="app-shell">
-      {/* [Aaditya]: HelloWorld app setup rendered as the first React learning problem. */}
-      <HelloWorld />
-      {/* [Aaditya]: Data binding examples are rendered after the initial setup. */}
-      <DataBinding />
-      {/* [Aaditya]: Component examples show props, composition, and list rendering. */}
-      <ComponentsDemo />
-    </main>
+    <Routes>
+      {/* [Aaditya]: Layout wraps all routes with shared navigation and global styling. */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="hello-world" element={<HelloWorldPage />} />
+        <Route path="data-binding" element={<DataBindingPage />} />
+        <Route path="components" element={<ComponentsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 
