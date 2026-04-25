@@ -36,6 +36,64 @@ input {
   box-shadow: 0 20px 45px rgba(31, 41, 51, 0.08);
 }
 
+.learning-section {
+  max-width: 900px;
+  margin: 28px auto 0;
+}
+
+.learning-section h2 {
+  margin: 0 0 18px;
+  font-size: 2rem;
+}
+
+.binding-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.example-card {
+  min-height: 210px;
+  padding: 22px;
+  border: 1px solid #d8e2dc;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.example-card h3 {
+  margin: 0 0 12px;
+  color: #234b43;
+  font-size: 1.05rem;
+}
+
+.example-card label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.example-card input {
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid #b8c7c0;
+  border-radius: 6px;
+}
+
+.example-card button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #2f7d6f;
+  cursor: pointer;
+}
+
+.example-card button:hover {
+  background: #25685c;
+}
+
 .eyebrow {
   margin: 0 0 12px;
   color: #2f7d6f;
@@ -66,5 +124,9 @@ p {
 
   h1 {
     font-size: 2.1rem;
+  }
+
+  .binding-grid {
+    grid-template-columns: 1fr;
   }
 }
