@@ -16,14 +16,69 @@ body {
   min-height: 100vh;
 }
 
+a {
+  color: inherit;
+}
+
 button,
 input {
   font: inherit;
 }
 
 .app-shell {
-  min-height: 100vh;
+  min-height: calc(100vh - 76px);
   padding: 40px 20px;
+}
+
+.site-frame {
+  min-height: 100vh;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  min-height: 76px;
+  padding: 14px 28px;
+  border-bottom: 1px solid #d8e2dc;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.topbar strong,
+.topbar span {
+  display: block;
+}
+
+.topbar span {
+  margin-top: 2px;
+  color: #52616b;
+  font-size: 0.86rem;
+}
+
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.topbar a {
+  padding: 9px 12px;
+  border-radius: 6px;
+  color: #234b43;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.topbar a:hover,
+.topbar a.active {
+  color: #ffffff;
+  background: #2f7d6f;
 }
 
 .hero-panel {
@@ -92,6 +147,13 @@ input {
 
 .example-card button:hover {
   background: #25685c;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 8px;
+  color: #2f7d6f;
+  font-weight: 800;
 }
 
 .summary-panel {
@@ -170,6 +232,17 @@ p {
 @media (max-width: 640px) {
   .app-shell {
     padding: 20px 14px;
+  }
+
+  .topbar {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .topbar nav {
+    justify-content: flex-start;
   }
 
   .hero-panel {
